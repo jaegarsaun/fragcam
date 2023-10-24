@@ -11,9 +11,10 @@
 }
 body{
   background-color: var(--background);
-  padding-top: 75px;
+  /* padding-top: 75px; */
   height: 100vh;
   overflow-x: hidden;
+  margin: 0;
 }
 p,h1{
   font-family: 'PT Sans', sans-serif;
@@ -34,4 +35,15 @@ p,h1{
 }
 .blue{
   color: var(--blue);
+}
+.input{
+  border: 2px solid var(--muted);
+}
+.input:focus{
+  outline: none;
+  border: 2px solid var(--blue);
+}
+.gradient-background{
+  background: rgb(0,138,255);
+  background: linear-gradient(90deg, rgba(0,138,255,1) 0%, rgba(0,89,255,1) 100%);
 }
