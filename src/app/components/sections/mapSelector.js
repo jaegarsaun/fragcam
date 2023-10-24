@@ -4,19 +4,12 @@ export default function MapSelector() {
     const maps = [
         'ancient', 
         'anubis', 
-        'dust 2', 
+        'dust', 
         'inferno', 
         'mirage', 
         'nuke', 
         'overpass', 
-        'office', 
         'vertigo',
-        'baggage',
-        'canals',
-        'italy',
-        'lake',
-        'short dust',
-        'shoots',
     ];
 
     return (
@@ -35,7 +28,7 @@ const styles = {
     width: '100vw',
     display: 'flex',
     overflowY: 'hidden',
-    overflowX: 'auto',
+    overflowX: 'scroll',
     scrollbarWidth: 'none', // For Firefox
     scrollbarColor: 'transparent transparent', // For Firefox
     WebkitOverflowScrolling: 'touch', // For Webkit-based browsers (like Chrome)
