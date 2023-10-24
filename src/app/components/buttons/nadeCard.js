@@ -7,6 +7,9 @@ import CardActions from "@mui/material/CardActions";
 import Typography from '@mui/material/Typography';
 
 export default function NadeCard(props) {
+
+  const mapName = props.nade.map.toLowerCase();
+
   return (
     <Card sx={{ maxWidth: 345 }} style={{backgroundColor: '#212836', textAlign: 'center'}}>
       <CardHeader
@@ -25,7 +28,7 @@ export default function NadeCard(props) {
       <CardMedia
         component="img"
         height="194"
-        image="https://staticg.sportskeeda.com/editor/2023/10/fc259-16962077266319-1920.jpg"
+        image={`/images/${mapName}.jpg`}
         alt="CS2 Mirage Map"
       />
       <CardActions disableSpacing>

@@ -15,14 +15,14 @@ const nadeinfo = {
     },
     nade3: {
         name: "A Site Smoke",
-        map: "Dust 2",
+        map: "Dust",
         type: "Smoke",
         side: "T",
         description: "A site smoke from jungle",
     },
     nade4: {
-        name: "B Site Market Smoke",
-        map: "Mirage",
+        name: "B Site Smoke",
+        map: "Ancient",
         type: "Smoke",
         side: "T",
         description: "A site smoke from jungle",
