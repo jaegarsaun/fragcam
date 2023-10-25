@@ -2,14 +2,60 @@
 import '../../globals.css';
 import Spacer from '../design/spacer.js';
 
+import $ from 'jquery';
+
 export default function loginForm(){
 
+
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+
+    //     try {
+    //         const response = await fetch('http://localhost:8000/server.php', {
+    //             method: 'POST',
+    //             body: JSON.stringify({ key: 'Test' }),
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //         });
+
+    //         if (response.ok) {
+    //             // Request was successful, you can handle the response here
+    //             console.log('Success');
+    //         } else {
+    //             // Request failed, handle the error here
+    //             console.error('Request failed');
+    //         }
+    //     } catch (error) {
+    //         // Handle network or other errors here
+    //         console.error('Error:', error);
+    //     }
+    // };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = $(e.target); // get the form which triggered the submit event
+        // Create an ajax request
+        $.ajax({
+            type: "POST",
+            url: form.attr("action"),
+            data: form.serialize(),
+            success(data) {
+                console.log(data);
+            },
+            error(data) {
+                console.log(data);
+            }
+        });
+    };
 
 
 
 
     return(
-            <form style={styles.form} action="http://localhost:8000/server.php" method="post">
+            <form style={styles.form} action="http://localhost:8000/server.php" method="post"
+            onSubmit={(event) => handleSubmit(event)}
+            >
                 <div style={styles.div}>
                     <p className='secondary-text' style={{fontSize: '20px'}}>Log into <span className='primary-text bold'>CS<span className='blue'>FRAGS</span></span></p>
                 </div>
