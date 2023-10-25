@@ -9,7 +9,7 @@ export default function loginForm(){
 
 
     return(
-            <form style={styles.form} onSubmit={handleSubmit}>
+            <form style={styles.form} action="http://localhost:8000/server.php" method="post">
                 <div style={styles.div}>
                     <p className='secondary-text' style={{fontSize: '20px'}}>Log into <span className='primary-text bold'>CS<span className='blue'>FRAGS</span></span></p>
                 </div>
