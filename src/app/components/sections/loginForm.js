@@ -2,7 +2,7 @@
 import '../../globals.css';
 import Spacer from '../design/spacer.js';
 
-import $ from 'jquery';
+import $, { error } from 'jquery';
 
 export default function loginForm(){
 
@@ -12,23 +12,28 @@ export default function loginForm(){
         const form = $(e.target); // get the form which triggered the submit event
         // Create an ajax request
         $.ajax({
-            type: "POST",
+            type: "GET",
             url: form.attr("action"),
             data: form.serialize(),
             success(data) {
                 console.log(data);
             },
-            error(data) {
-                alert("An error occurred.");
+            error(jqXHR, textStatus, errorThrown) {
+                //Eventually I will want to have the errors report to me in some way so I know to fix them once the site is live.
+                alert("An error occured, please try again later");
+                
+                // alert("An error occurred: " + textStatus + " - " + errorThrown);
+                // console.log(jqXHR);
             }
         });
+        
     };
 
 
 
 
     return(
-            <form style={styles.form} action="http://localhost:8000/server.php" method="POST"
+            <form style={styles.form} action="http://localhost:8000/server.php" method="GET"
             onSubmit={(event) => handleSubmit(event)}
             >
                 <div style={styles.div}>

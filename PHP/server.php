@@ -1,60 +1,41 @@
 <?php
 header("Access-Control-Allow-Origin: http://localhost:3000"); // Replace with the actual origin of your web page
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-// Database connection
 
-$host = 'localhost'; 
+// Database connection
+$host = '127.0.0.1'; 
 $port = 3306; 
 $database = 'csfrags';
 $username = 'root';
 $password = '';
 
-$conn = new mysqli($host, $username, $password, $database, $port);
+try {
+    $conn = new mysqli($host, $username, $password, $database, $port);
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} else {
-    echo "Connected successfully";
 }
 
-
-
 // Database operations
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     header('Content-Type: application/json');
     header('Access-Control-Allow-Origin: http://localhost:3000'); // Update the origin as needed
 
-    $username = $_POST['username'];
-    $password = $_POST['password']; // eventually we will compare password hashes instead of just the password
-
-    echo json_encode(array('username' => $username, 'password' => $password));
-
-    // // Prepare a SQL query to check the username and password
-    // $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-
-    // // Execute the query
-    // $result = $conn->query($sql);
-
-    // if ($result->num_rows > 0) {
-    //     // Successful login
-    //     // set user credentials
-    //     $row = $result->fetch_assoc();
-    //     $user_id = $row['user_id'];
-    //     // Put user credentials in session variables
-    //     $_SESSION['user_id'] = $user_id;
-
-    //     http_response_code(200); // Set HTTP response status code to: 200 - OK
-    //     exit; // Make sure to exit the script to prevent further execution
-
-    // } else {
-    //     // Failed login
-    //     http_response_code(401); // Set HTTP response status code to: 401 - Unauthorized
-        
-    // }
+    $username = $_GET['username'];
+    $password = $_GET['password']; // eventually we will compare password hashes instead of just the password
 
 
-    
-
+    // Query the database
+    $sql = "SELECT * FROM users WHERE username = '$username' AND password_hash = '$password'";
+    $result = $conn->query($sql);
+    // If there is a result return true, else return false
+    if ($result->num_rows > 0) {
+        echo json_encode(array('success' => true));
+    } else {
+        echo json_encode(array('success' => false));
+    }
 }
-
 ?>
