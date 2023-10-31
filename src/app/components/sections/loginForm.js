@@ -16,7 +16,11 @@ export default function loginForm(){
             url: form.attr("action"),
             data: form.serialize(),
             success(data) {
-                console.log(data);
+                if(data.success === true){
+                    window.location.href = '/home';
+                }else{
+                    alert(data);
+                }
             },
             error(jqXHR, textStatus, errorThrown) {
                 //Eventually I will want to have the errors report to me in some way so I know to fix them once the site is live.

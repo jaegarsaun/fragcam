@@ -1,10 +1,42 @@
-
+"use client"
 import '../../globals.css';
 import Spacer from '../design/spacer.js';
 
+import $, { error } from 'jquery';
+
 export default function SignupForm(){
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = $(e.target); // get the form which triggered the submit event
+        // Create an ajax request
+        $.ajax({
+            type: "POST",
+            url: form.attr("action"),
+            data: form.serialize(),
+            success(data) {
+                if(data.success === true){
+                    window.location.href = '/';
+                }else{
+                    alert(data);
+                }
+            },
+            error(jqXHR, textStatus, errorThrown) {
+                //Eventually I will want to have the errors report to me in some way so I know to fix them once the site is live.
+                alert("An error occured, please try again later");
+                
+                // alert("An error occurred: " + textStatus + " - " + errorThrown);
+                // console.log(jqXHR);
+            }
+        });
+        
+    };
+
+
     return(
-            <form style={styles.form} method="POST">
+           <form style={styles.form} action="http://localhost:8000/server.php" method="POST"
+            onSubmit={(event) => handleSubmit(event)}
+            >
                 <div style={styles.div}>
                     <p className='secondary-text' style={{fontSize: '20px'}}>Sign up for <span className='primary-text bold'>CS<span className='blue'>FRAGS</span></span></p>
                 </div>
