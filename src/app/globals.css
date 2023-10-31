@@ -47,3 +47,10 @@ p,h1{
   background: rgb(0,138,255);
   background: linear-gradient(90deg, rgba(0,138,255,1) 0%, rgba(0,89,255,1) 100%);
 }
+.hamMenu{
+  height: 100vh;
+  display: flex;
+  background-color: var(--background);
+  width: 20vw;
+  position: absolute;
+}

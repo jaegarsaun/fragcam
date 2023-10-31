@@ -3,8 +3,7 @@ import "../../globals.css";
 import Image from 'next/image';
 
 export default function MapButton(props) {
-  const mapImage = require(`/public/images/${props.map}.jpg`);
-
+  const mapName = props.map
   function mouseOver(event) {
     const mapImg = event.currentTarget.querySelector(".mapImg");
     mapImg.style.opacity = "0.8";
@@ -32,7 +31,7 @@ export default function MapButton(props) {
         style={styles.mapImg}
       />
       <p style={styles.mapName} className="bold primary-text">
-        {props.map}
+        {mapName.toUpperCase()}
       </p>
     </div>
   );
@@ -40,7 +39,7 @@ export default function MapButton(props) {
 
 const styles = {
   mapStyle: {
-    height: "15vh",
+    height: "125px",
     width: "232px",
     borderRadius: "8px",
     boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",

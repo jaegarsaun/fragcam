@@ -3,12 +3,16 @@ import MapSelector from '../components/sections/mapSelector.js';
 import Line from '../components/design/line.js';
 import '../globals.css';
 import NadeListings from '../components/sections/nadeListings.js';
-
+import Spacer from '../components/design/spacer.js';
+import HamMenu from '../components/sections/hamMenu.js';
 
 export default function Home(){
   return (
     <div style={styles.padding}>
+      
       <Navbar />
+      
+      <Spacer height="50px"/>
       <div style={styles.div}>
         <h2 className='secondary-text bold' style={{fontSize: '20px'}}>Maps</h2>
         <Line />
@@ -20,6 +24,7 @@ export default function Home(){
         <Line />
       </div>
       <NadeListings />
+      
     </div>
   );
 }

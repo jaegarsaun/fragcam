@@ -27,6 +27,34 @@ const nadeinfo = {
         side: "T",
         description: "A site smoke from jungle",
     },
+    nade5: {
+        name: "B Site Smoke",
+        map: "Ancient",
+        type: "Smoke",
+        side: "T",
+        description: "A site smoke from jungle",
+    },
+    nade6: {
+        name: "B Site Smoke",
+        map: "Ancient",
+        type: "Smoke",
+        side: "T",
+        description: "A site smoke from jungle",
+    },
+    nade7: {
+        name: "B Site Smoke",
+        map: "Ancient",
+        type: "Smoke",
+        side: "T",
+        description: "A site smoke from jungle",
+    },
+    nade8: {
+        name: "B Site Smoke",
+        map: "Ancient",
+        type: "Smoke",
+        side: "T",
+        description: "A site smoke from jungle",
+    },
 
 }
 import NadeCard from "../buttons/nadeCard";
