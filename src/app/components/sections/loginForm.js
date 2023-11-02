@@ -17,7 +17,7 @@ export default function loginForm(){
             data: form.serialize(),
             success(data) {
                 if(data.success === true){
-                    window.location.href = '/home';
+                    window.location.href = '/lineups';
                 }else{
                     alert(data);
                 }

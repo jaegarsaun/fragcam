@@ -1,6 +1,6 @@
 import MapButton from '../buttons/mapButton.js';
 
-export default function MapSelector() {
+export default function MapSelector({ onMapButtonClick }) {
     const maps = [
         'ancient', 
         'anubis', 
@@ -13,11 +13,12 @@ export default function MapSelector() {
     ];
 
     return (
+
+
         <section style={styles}>
             {maps.map((element) => (
-                <MapButton map={element} key={element} />
-            ))};
-            
+                <MapButton map={element} key={element} onClick={() => onMapButtonClick(element)} />
+            ))}
         </section>
         
     );

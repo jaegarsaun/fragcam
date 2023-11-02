@@ -21,6 +21,7 @@ export default function MapButton(props) {
       onMouseLeave={mouseOut}
       className="primary-button"
       tabIndex={0}
+      onClick={props.onClick}
     >
       <Image
         src={`/images/${props.map}.jpg`}

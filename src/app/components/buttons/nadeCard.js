@@ -7,6 +7,9 @@ import CardActions from "@mui/material/CardActions";
 import Typography from '@mui/material/Typography';
 
 export default function NadeCard(props) {
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
   const mapName = props.nade.map.toLowerCase();
 
@@ -19,8 +22,8 @@ export default function NadeCard(props) {
           </Typography>
         }
         subheader={
-          <Typography variant="p" style={{textAlign: 'center', color: '#BBC1C8', fontSize: '0.95rem'}}>
-            {props.nade.map}
+          <Typography variant="body1" style={{textAlign: 'center', color: '#BBC1C8', fontSize: '0.95rem'}}>
+            {capitalizeFirstLetter(props.nade.map)}
           </Typography>
         }
 
