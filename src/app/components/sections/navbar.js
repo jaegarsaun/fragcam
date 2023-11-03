@@ -31,6 +31,7 @@ const styles = {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        backgroundColor: '#0D1520',
     },
     div: {
         display: 'flex',
@@ -39,6 +40,7 @@ const styles = {
     },
     p: {
         fontSize: '1.5rem',
+        zIndex: 900,
     }
     
 

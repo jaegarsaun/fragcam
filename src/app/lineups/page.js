@@ -29,7 +29,7 @@ export default function Home() {
       
       <Navbar onHamClick={toggleHamMenu}/>
       <HamMenu active={isHamMenuActive}/>
-      <Spacer height="50px"/>
+      <Spacer height="75px"/>
       <div style={styles.div}>
         <h2 className='secondary-text bold' style={{fontSize: '20px'}}>Maps</h2>
         <Line />

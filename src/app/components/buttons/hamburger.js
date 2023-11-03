@@ -17,6 +17,7 @@ const styles = {
       marginRight: '10px',
       transition: 'background-color 0.2s',
       transition: 'transform 0.3s ease',
+      zIndex: 1000,
     },
     hovered: {
         height: '35px',
@@ -31,6 +32,7 @@ const styles = {
         marginRight: '10px',
         transition: 'background-color 0.2s',
         transition: 'transform 0.3s ease',
+        zIndex: 1000,
     }
   };
 

@@ -60,7 +60,6 @@ const nadeinfo = {
 import NadeCard from "../buttons/nadeCard";
 
 export default function NadeListings({ selectedMap }) {
-    console.log(selectedMap);
     return(
         <section style={styles}>
       {Object.keys(nadeinfo)

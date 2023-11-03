@@ -48,14 +48,17 @@ p,h1{
   background: linear-gradient(90deg, rgba(0,138,255,1) 0%, rgba(0,89,255,1) 100%);
 }
 .hamMenu{
-  height: 100vh;
+  height: 100%;
   display: flex;
+  align-items: flex-start;
+  flex-direction: column;
   background-color: var(--background);
   width: 300px;
-  position: absolute;
-  z-index: 90;
+  position: fixed;
+  z-index: 999;
   transform: translateX(-500px);
   transition: transform 0.3s ease;
+
 }
 
 .hamMenu.active{
