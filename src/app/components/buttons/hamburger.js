@@ -15,7 +15,8 @@ const styles = {
       border: 'none',
       backgroundColor: 'transparent',
       marginRight: '10px',
-      transition: 'background-color 0.2s, transform 0.2s', // Add transform property
+      transition: 'background-color 0.2s',
+      transition: 'transform 0.3s ease',
     },
     hovered: {
         height: '35px',
@@ -28,7 +29,8 @@ const styles = {
         border: 'none',
         backgroundColor: '#212836',
         marginRight: '10px',
-        transition: 'background-color 0.2s, transform 0.2s', // Add transform property
+        transition: 'background-color 0.2s',
+        transition: 'transform 0.3s ease',
     }
   };
 
