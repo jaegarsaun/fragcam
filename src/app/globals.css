@@ -53,4 +53,12 @@ p,h1{
   background-color: var(--background);
   width: 20vw;
   position: absolute;
+  z-index: 90;
+  transform: translateX(-500px);
+  transition: transform 0.5s ease-in-out;
+}
+
+.hamMenu.active{
+  transform: translateX(0px);
+  transition: transform 0.5s ease-in-out;
 }

@@ -1,15 +1,21 @@
 import '../../globals.css'
 import Hamburger from '../buttons/hamburger';
+import HamMenu from './hamMenu';
 
-export default function Navbar(){
+export default function Navbar({onHamClick}){
 
     return(
         <nav style={styles.nav}>
             <div style={styles.div}>
-            <Hamburger />
+            <Hamburger onClick={() => onHamClick()}/>
             <p className='bold primary-text' style={styles.p}>CS <span className='blue'>FRAGS</span></p>
             </div>
+            
         </nav>
+
+        
+
+
     );
 }
 

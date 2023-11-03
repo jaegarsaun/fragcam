@@ -9,11 +9,16 @@ import Spacer from '../components/design/spacer.js';
 import HamMenu from '../components/sections/hamMenu.js';
 import { useState } from 'react';
 
-export default function Home(){
+export default function Home() {
   const [selectedMap, setSelectedMap] = useState(null);
+  const [isHamMenuActive, setHamMenuActive] = useState(false); // State for ham menu
 
   const handleMapButtonClick = (map) => {
     setSelectedMap(map);
+  };
+
+  const toggleHamMenu = () => {
+    setHamMenuActive(!isHamMenuActive);
   };
 
   function capitalizeFirstLetter(string) {
@@ -22,8 +27,8 @@ export default function Home(){
   return (
     <div style={styles.padding}>
       
-      <Navbar />
-      
+      <Navbar onHamClick={toggleHamMenu}/>
+      <HamMenu active={isHamMenuActive}/>
       <Spacer height="50px"/>
       <div style={styles.div}>
         <h2 className='secondary-text bold' style={{fontSize: '20px'}}>Maps</h2>

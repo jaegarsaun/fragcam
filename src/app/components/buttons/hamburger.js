@@ -32,7 +32,7 @@ const styles = {
     }
   };
 
-export default function Hamburger() {
+export default function Hamburger(props) {
     const [isHovered, setHovered] = useState(false);
     const [isClicked, setClicked] = useState(false);
 
@@ -42,10 +42,12 @@ export default function Hamburger() {
   
     const handleMouseLeave = () => {
       setHovered(false);
+
     };
 
     const handleClick = () => {
       setClicked(!isClicked); // Toggle the value of isClicked
+      props.onClick();
     };
 
     const rotation = isClicked ? 'rotate(90deg)' : 'rotate(0deg)';
